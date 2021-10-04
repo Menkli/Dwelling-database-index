@@ -1,0 +1,79 @@
+---
+title: "dggridR-test"
+author: "Linda Menk"
+date: "4 10 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE, warning=FALSE,message=FALSE}
+library(dggridR)
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(magrittr)
+```
+
+```{r prepare,   warning=FALSE, message=FALSE}
+
+#Construct a global grid with cells approximately 1000 miles across
+dggs          <- dgconstruct(spacing=2, metric=TRUE, resround='down')
+
+
+#Set working directory
+#setwd("C:\\Users\\b1019175\\Desktop\\Linda\\R_skripte\\dggs-integration")
+
+#Read the test data (point data)
+sbg <- st_read("C:\\Users\\b1019175\\Desktop\\Linda\\R_skripte\\dggs-integration\\data\\alle_Wasserpunkte.shp")
+#st_coordinates(sbg)[,1] #show coordinates
+st_is_longlat(sbg) #test whether the coordinate reference system is latlon
+st_crs(sbg) #show the coordinate reference system of the data
+sbg_trans <- st_transform(sbg, "+proj=longlat +datum=WGS84 +no_defs") #transform coordinate reference system to latlon
+st_crs(sbg_trans) #show again the crs
+sbg_trans <- na.omit(sbg_trans) # ignore no data values
+
+```
+
+```{r use gddridR, warning=FALSE, message=FALSE}
+#Make two sepparate columns for lat/lon
+sbg_trans <- sbg_trans %>%
+  dplyr::mutate(lon = sf::st_coordinates(.)[,1],
+                lat = sf::st_coordinates(.)[,2])
+
+x<-sbg_trans[1:500,]#Create a subset of 500 datapoints
+
+#Get the corresponding grid cells for each earthquake epicenter (lat-long pair)
+x$cell <- dgGEO_to_SEQNUM(dggs,x$lon,x$lat)$seqnum
+
+#Converting SEQNUM to GEO gives the center coordinates of the cells
+cellcenters   <- dgSEQNUM_to_GEO(dggs,x$cell)
+
+#Get the number of earthquakes in each cell
+xcounts   <- x %>% group_by(cell) %>% summarise(count=n())
+
+#Get the grid cell boundaries for cells which had quakes
+grid          <- dgcellstogrid(dggs,xcounts$cell,frame=TRUE,wrapcells=TRUE)
+
+#Update the grid cells' properties to include the number of earthquakes
+#in each cell
+grid          <- merge(grid,xcounts,by.x="cell",by.y="cell")
+```
+
+```{r plot}
+#Get Salzburg admin boundaries
+bl <- st_read("C:\\Users\\b1019175\\Desktop\\Linda\\R_skripte\\dggs-integration\\data\\BL_Salzburg.shp")
+bl <- st_transform(bl, "+proj=longlat +datum=WGS84 +no_defs")
+
+p<-ggplot() +
+  geom_sf(data = bl, size = 2, shape = 23, fill = "white") +
+  geom_polygon(data=grid, aes(x=long, y=lat, group=group, fill = count))
+p
+```
+
+```{r point plot}
+q <-ggplot() +
+  geom_sf(data = bl, size = 2, shape = 23, fill = "white") +
+  geom_sf(data = x)
+q
+
+```
+
