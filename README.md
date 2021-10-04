@@ -9,7 +9,7 @@ All the dwelling data in the database is supposed to receive an identifier which
 - a timestamp
 - its location, based on a DGGS  
 
-Question: Why can we not have the timestamp and the location stored as an attribute of the dwelling?
+*(Question from me: Why can we not have the timestamp and the location stored as an attribute of the dwelling? Why must it be in the identifier?)*
 
 ### DGGS  
 DGGS stands for discrete global grid system. By now, DGGS is an Open Geospatial Consortium (OGC) standard. It is defined as *"a spatial reference system that uses a hierarchical tesselation of cells to partition and address the globe."* (Purss, 2015). Each cell has an unique adress and can be repeatedly subdivided for finer resolutions.    
