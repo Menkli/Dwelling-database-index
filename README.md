@@ -44,6 +44,6 @@ http://docs.opengeospatial.org/as/15-104r5/15-104r5.html
  
 ### DGGS Implementations  
 
-<a href="https://eng.uber.com/h3/" title="H3">H3: Uber's Hexagonal Hierarchical Spatial Index</a>
-<a href="https://github.com/r-barnes/dggridR" title="dggridR">dggridR: Discrete Global Grids for R</a>
-   <a href="https://menkli.github.io/Dwelling-database-index/dggidR-test.html" title="dggridR-test">Click here for some examples I did using dggridR</a>
+<a href="https://eng.uber.com/h3/" title="H3">H3: Uber's Hexagonal Hierarchical Spatial Index</a>  
+<a href="https://github.com/r-barnes/dggridR" title="dggridR">dggridR: Discrete Global Grids for R</a>  
+   <a href="https://menkli.github.io/Dwelling-database-index/dggidR-test.html" title="dggridR-test">Click here for some examples I did using dggridR</a>  
