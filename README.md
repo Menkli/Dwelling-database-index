@@ -29,4 +29,12 @@ Some advantages are:
 - Users can work with many types of data at once, which is beneficial when working in large projects or with time-series data
 - Accurately portrais polar regions
 
-![x](https://apogeospatial.com/wp-content/uploads/2016/03/DGGS-Examples_6-1024x615.jpg)
+<p align="center">
+  <a href="https://apogeospatial.com/2079-2/"><img src= "https://apogeospatial.com/wp-content/uploads/2016/03/DGGS-Examples_6-1024x615.jpg" width = "300px"/)</a>
+</p>
+
+#### Interesting introductory reads  
+(https://apogeospatial.com/2079-2/)[https://apogeospatial.com/2079-2/]
+(http://geoawesomeness.com/discrete-global-grid-system-dggs-new-reference-system/)[http://geoawesomeness.com/discrete-global-grid-system-dggs-new-reference-system/]
+(https://ecce.esri.ca/cogs-blog/2018/11/09/dggs-a-new-way-to-model-geospatial-information/)[https://ecce.esri.ca/cogs-blog/2018/11/09/dggs-a-new-way-to-model-geospatial-information/]
+(http://docs.opengeospatial.org/as/15-104r5/15-104r5.html)[http://docs.opengeospatial.org/as/15-104r5/15-104r5.html]
