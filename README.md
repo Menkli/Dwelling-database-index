@@ -29,7 +29,7 @@ Some advantages are:
 - Users can work with many types of data at once, which is beneficial when working in large projects or with time-series data
 - Accurately portrais polar regions, as well as all other regions of the earth
 
-There is not *the one* DGGS, but many different implementations. They have in common that they are based on platonic solids with corresponding equal area tesselations. Click on the images bewlo for further information.  
+There is not *the one* DGGS, but many different implementations. They have in common that they are based on platonic solids with corresponding equal area tesselations. Click on the images below for further information.  
 
 <p align="center">
    <a href="https://ecce.esri.ca/cogs-blog/2018/11/09/dggs-a-new-way-to-model-geospatial-information/"><img src= "https://ecce.esri.ca/wp-content/uploads/2018/11/polyhedratessellations-700x294.png" width = "500px"/)</a>
@@ -45,3 +45,5 @@ http://docs.opengeospatial.org/as/15-104r5/15-104r5.html
 ### DGGS Implementations  
 
 <a href="https://eng.uber.com/h3/" title="H3">H3: Uber's Hexagonal Hierarchical Spatial Index</a>
+<a href="https://github.com/r-barnes/dggridR" title="dggridR">dggridR: Discrete Global Grids for R</a>
+
