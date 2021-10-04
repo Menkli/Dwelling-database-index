@@ -13,7 +13,7 @@ Question: Why can we not have the timestamp and the location stored as an attrib
 
 ### DGGS  
 DGGS stands for discrete global grid system. By now, DGGS is an Open Geospatial Consortium (OGC) standard. It is defined as *"a spatial reference system that uses a hierarchical tesselation of cells to partition and address the globe."* (Purss, 2015).  
-DGGSs could replace projected reference systems, as they avoid some of their known shortcomings. They are not meant for navigation (like latitude and longitude) but for tasks such as: 
+**DGGSs could replace projected reference systems**, as they avoid some of their known shortcomings. They are not meant for navigation (like latitude and longitude) but for tasks such as: 
 - data modeling
 - processing
 - storage
