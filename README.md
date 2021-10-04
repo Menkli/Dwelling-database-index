@@ -10,3 +10,23 @@ All the dwelling data in the database is supposed to receive an identifier which
 - its location, based on a DGGS  
 
 Question: Why can we not have the timestamp and the location stored as an attribute of the dwelling?
+
+### DGGS  
+DGGS stands for discrete global grid system. By now, DGGS is an Open Geospatial Consortium (OGC) standard. It is defined as *"a spatial reference system that uses a hierarchical tesselation of cells to partition and address the globe."* (Purss, 2015).  
+DGGSs could replace projected reference systems, as they avoid some of their known shortcomings. They are not meant for navigation (like latitude and longitude) but for tasks such as: 
+- data modeling
+- processing
+- storage
+- transmission
+- visualization
+- analysis  
+-
+Some advantages are:  
+- If everyone would use this standard, the same fixed cells could be used to record and analyze all location specific data  
+- It allows raster, vector and point cloud data to be combined into a common, globally consistent framework (OGC, 2017)  
+- It can analyze large amounts of data very quickly  
+- Multiple data sources can be integrated and analyzed without converting or changing the spatial reference system (Peterson, 2016)
+- Users can work with many types of data at once, which is beneficial when working in large projects or with time-series data
+- Accurately portrais polar regions
+
+![x](https://apogeospatial.com/wp-content/uploads/2016/03/DGGS-Examples_6-1024x615.jpg)
